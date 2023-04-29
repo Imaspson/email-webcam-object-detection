@@ -21,9 +21,9 @@ def send_email(image_path):
     gmail.ehlo()
     gmail.starttls()
     gmail.login(SENDER, PASSWORD)
-    gmail.sendmail(SENDER, PASSWORD, email_message.as_string())
+    gmail.sendmail(SENDER, RECEIVER, email_message.as_string())
     gmail.quit()
 
 
 if __name__ == "__main__":
-    send_email()
+    send_email("images/*.")
